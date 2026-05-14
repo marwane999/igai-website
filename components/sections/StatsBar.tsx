@@ -31,8 +31,18 @@ function CountUp({ end, suffix = "", duration = 2000 }: { end: string; suffix?: 
 
 export function StatsBar() {
   return (
-    <section className="bg-bg-dark py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-navy py-16 lg:py-20 overflow-hidden">
+      {/* Gold bar top */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
+      {/* Geometric overlay */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `
+          repeating-linear-gradient(45deg, transparent 48%, rgba(201,168,76,0.5) 50%, transparent 52%),
+          repeating-linear-gradient(-45deg, transparent 48%, rgba(201,168,76,0.5) 50%, transparent 52%)
+        `,
+        backgroundSize: "30px 30px",
+      }} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {STATS.map((stat, index) => (
             <motion.div
@@ -43,10 +53,10 @@ export function StatsBar() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="font-heading text-4xl lg:text-5xl font-bold text-primary mb-2">
+              <div className="font-heading text-4xl lg:text-5xl font-bold gold-text mb-2">
                 <CountUp end={stat.value} />
               </div>
-              <p className="text-sm text-text-on-dark/70">{stat.label}</p>
+              <p className="text-sm text-white/60">{stat.label}</p>
             </motion.div>
           ))}
         </div>

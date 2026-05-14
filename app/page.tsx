@@ -15,7 +15,7 @@ export default function HomePage() {
       <HeroSection />
       <TrustBar />
       <StatsBar />
-      <div className="bg-bg-alt">
+      <div className="bg-cream-dark">
         <FeaturesGrid
           features={FEATURES}
           title="Why Ibn Ghazi Arabic Institute?"
@@ -25,17 +25,22 @@ export default function HomePage() {
       <CourseCards />
       <TestimonialsCarousel />
 
-      <section className="py-16 lg:py-20 bg-bg">
+      <section className="py-16 lg:py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-text">
-              Experience IGAI
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold">
+              <span className="gold-text">Experience IGAI</span>
             </h2>
-            <p className="mt-4 text-lg text-text-light max-w-2xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mt-3 mb-3">
+              <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-gold/30" />
+              <div className="h-2 w-2 rotate-45 border border-gold/30" />
+              <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-gold/30" />
+            </div>
+            <p className="text-lg text-stone max-w-2xl mx-auto">
               See what makes the Ibn Ghazi Arabic Institute a life-changing experience
             </p>
           </div>
-          <div className="relative aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
+          <div className="relative aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl ring-1 ring-gold/20">
             <iframe
               src="https://www.youtube.com/embed/HG7WmScttcM"
               title="Ibn Ghazi Arabic Institute"
@@ -47,7 +52,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="bg-bg">
+      <div className="bg-cream">
         <ImageTextBlock
           image={{
             src: "https://www.igai-fez.com/wp-content/uploads/2014/02/room.jpg",

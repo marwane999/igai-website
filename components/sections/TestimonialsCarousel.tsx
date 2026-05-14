@@ -33,13 +33,26 @@ export function TestimonialsCarousel() {
   }
 
   return (
-    <section className="py-16 lg:py-20 bg-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 lg:py-20 bg-cream overflow-hidden">
+      {/* Subtle Moroccan pattern background */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `
+          repeating-linear-gradient(45deg, transparent 48%, rgba(201,168,76,0.5) 50%, transparent 52%),
+          repeating-linear-gradient(-45deg, transparent 48%, rgba(201,168,76,0.5) 50%, transparent 52%)
+        `,
+        backgroundSize: "40px 40px",
+      }} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-text">
-            What Our Students Say
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold">
+            <span className="gold-text">What Our Students Say</span>
           </h2>
-          <p className="mt-4 text-lg text-text-light max-w-2xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mt-4 mb-4">
+            <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-gold/30" />
+            <Star className="h-3 w-3 text-gold/40" />
+            <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-gold/30" />
+          </div>
+          <p className="text-lg text-stone max-w-2xl mx-auto">
             Hear from our alumni about their experience at Ibn Ghazi Arabic Institute
           </p>
         </div>
@@ -55,20 +68,20 @@ export function TestimonialsCarousel() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="bg-white rounded-xl border border-border/40 p-8 lg:p-10 shadow-sm"
+                className="bg-white rounded-xl border border-gold/20 p-8 lg:p-10 shadow-lg shadow-gold/5"
               >
-                <Quote className="h-8 w-8 text-primary/30 mb-4" />
-                <p className="text-text text-base lg:text-lg leading-relaxed italic">
+                <Quote className="h-8 w-8 text-gold/30 mb-4" />
+                <p className="text-charcoal text-base lg:text-lg leading-relaxed italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-1 mt-6">
                   {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                   ))}
                 </div>
-                <div className="mt-4 border-t border-border/40 pt-4">
-                  <p className="font-semibold text-text">{t.name}</p>
-                  <p className="text-sm text-text-light">
+                <div className="mt-4 border-t border-gold/10 pt-4">
+                  <p className="font-semibold text-charcoal">{t.name}</p>
+                  <p className="text-sm text-stone">
                     {t.title}, {t.institution}
                   </p>
                 </div>
@@ -79,7 +92,7 @@ export function TestimonialsCarousel() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="p-2.5 rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
+              className="p-2.5 rounded-full border border-border hover:border-gold hover:text-gold transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -90,7 +103,7 @@ export function TestimonialsCarousel() {
                   key={i}
                   onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i) }}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    i === current ? "w-6 bg-primary" : "w-2 bg-border"
+                    i === current ? "w-6 bg-gold" : "w-2 bg-border"
                   }`}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
@@ -98,7 +111,7 @@ export function TestimonialsCarousel() {
             </div>
             <button
               onClick={next}
-              className="p-2.5 rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
+              className="p-2.5 rounded-full border border-border hover:border-gold hover:text-gold transition-colors"
               aria-label="Next testimonial"
             >
               <ChevronRight className="h-5 w-5" />

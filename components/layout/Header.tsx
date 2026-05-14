@@ -44,7 +44,7 @@ export function Header() {
               <span
                 className={cn(
                   "font-heading text-lg lg:text-xl font-bold transition-colors",
-                  scrolled ? "text-text" : "text-white",
+                  scrolled ? "text-charcoal" : "text-white",
                 )}
               >
                 Ibn Ghazi
@@ -63,7 +63,7 @@ export function Header() {
                     className={cn(
                       "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
                       scrolled
-                        ? "text-text hover:text-primary hover:bg-bg-alt"
+                        ? "text-charcoal hover:text-gold hover:bg-cream-dark"
                         : "text-white/90 hover:text-white hover:bg-white/10",
                     )}
                   >
@@ -81,7 +81,7 @@ export function Header() {
                         <Link
                           key={sub.label}
                           href={sub.href}
-                          className="block px-4 py-2.5 text-sm text-text hover:text-primary hover:bg-bg-alt transition-colors"
+                          className="block px-4 py-2.5 text-sm text-charcoal hover:text-gold hover:bg-cream-dark transition-colors"
                         >
                           {sub.label}
                         </Link>
@@ -100,7 +100,7 @@ export function Header() {
                 className={cn(
                   "p-2 rounded-full transition-colors",
                   scrolled
-                    ? "text-text-light hover:text-primary hover:bg-bg-alt"
+                    ? "text-stone hover:text-gold hover:bg-cream-dark"
                     : "text-white/80 hover:text-white hover:bg-white/10",
                 )}
                 aria-label="Contact via WhatsApp"
@@ -118,7 +118,7 @@ export function Header() {
               onClick={() => setMobileOpen(true)}
               className={cn(
                 "lg:hidden p-2 rounded-lg transition-colors",
-                scrolled ? "text-text" : "text-white",
+                scrolled ? "text-charcoal" : "text-white",
               )}
               aria-label="Open menu"
             >

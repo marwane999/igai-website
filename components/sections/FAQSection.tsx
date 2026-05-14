@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Star } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface FAQItem {
@@ -24,14 +24,19 @@ export function FAQSection({
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-16 lg:py-20 bg-bg-alt">
+    <section className="py-16 lg:py-20 bg-cream-dark">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-text">
-            {title}
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold">
+            <span className="gold-text">{title}</span>
           </h2>
+          <div className="flex items-center justify-center gap-3 mt-4 mb-4">
+            <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-gold/30" />
+            <Star className="h-3 w-3 text-gold/40" />
+            <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-gold/30" />
+          </div>
           {subtitle && (
-            <p className="mt-4 text-lg text-text-light">
+            <p className="text-lg text-stone">
               {subtitle}
             </p>
           )}
@@ -41,17 +46,17 @@ export function FAQSection({
           {items.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl border border-border/40 overflow-hidden"
+              className="bg-white rounded-xl border border-border/40 overflow-hidden transition-shadow duration-300 hover:shadow-md hover:shadow-gold/5"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="flex items-center justify-between w-full px-6 py-4 lg:py-5 text-left transition-colors hover:bg-bg-alt/50"
+                className="flex items-center justify-between w-full px-6 py-4 lg:py-5 text-left transition-colors hover:bg-gold/[0.02]"
               >
-                <span className="font-medium text-text pr-4">{faq.question}</span>
+                <span className="font-medium text-charcoal pr-4 group-hover:text-gold-dark">{faq.question}</span>
                 <ChevronDown
                   className={cn(
-                    "h-4 w-4 shrink-0 text-text-light transition-transform duration-200",
-                    openIndex === index && "rotate-180",
+                    "h-4 w-4 shrink-0 text-stone transition-all duration-200",
+                    openIndex === index && "rotate-180 text-gold",
                   )}
                 />
               </button>
@@ -64,7 +69,8 @@ export function FAQSection({
                     transition={{ duration: 0.2, ease: "easeInOut" }}
                   >
                     <div className="px-6 pb-5">
-                      <p className="text-text-light text-sm leading-relaxed">
+                      <div className="w-8 h-[1px] bg-gold/30 mb-4" />
+                      <p className="text-stone text-sm leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>

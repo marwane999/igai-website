@@ -13,9 +13,9 @@ interface BreadcrumbsProps {
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className="py-4">
-      <ol className="flex items-center gap-1.5 text-sm text-text-light">
+      <ol className="flex items-center gap-1.5 text-sm text-stone">
         <li>
-          <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">
+          <Link href="/" className="hover:text-gold transition-colors flex items-center gap-1">
             <Home className="h-3.5 w-3.5" />
             <span className="sr-only">Home</span>
           </Link>
@@ -24,11 +24,11 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           <li key={index} className="flex items-center gap-1.5">
             <ChevronRight className="h-3.5 w-3.5" />
             {item.href ? (
-              <Link href={item.href} className="hover:text-primary transition-colors">
+              <Link href={item.href} className="hover:text-gold transition-colors">
                 {item.label}
               </Link>
             ) : (
-              <span className="text-text" aria-current="page">{item.label}</span>
+              <span className="text-charcoal" aria-current="page">{item.label}</span>
             )}
           </li>
         ))}
