@@ -24,6 +24,29 @@ export default function HomePage() {
       </div>
       <CourseCards />
       <TestimonialsCarousel />
+
+      <section className="py-16 lg:py-20 bg-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-text">
+              Experience IGAI
+            </h2>
+            <p className="mt-4 text-lg text-text-light max-w-2xl mx-auto">
+              See what makes the Ibn Ghazi Arabic Institute a life-changing experience
+            </p>
+          </div>
+          <div className="relative aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.youtube.com/embed/HG7WmScttcM"
+              title="Ibn Ghazi Arabic Institute"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
       <div className="bg-bg">
         <ImageTextBlock
           image={{
