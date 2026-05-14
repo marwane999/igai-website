@@ -1,0 +1,27 @@
+{
+  "name": "igai-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "framer-motion": "^12.x",
+    "lucide-react": "^0.x",
+    "clsx": "^2.x",
+    "tailwind-merge": "^3.x"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.x",
+    "@types/node": "^22.x",
+    "@types/react": "^19.x",
+    "@types/react-dom": "^19.x",
+    "tailwindcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.0"
+  }
+}
