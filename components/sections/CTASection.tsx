@@ -26,10 +26,20 @@ export function CTASection({
 }: CTASectionProps) {
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary-light to-secondary" />
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: "radial-gradient(circle at 20% 50%, #C8A45C 0%, transparent 50%), radial-gradient(circle at 80% 20%, #C8A45C 0%, transparent 50%)",
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary via-[#1E4A6E] to-secondary" />
+      {/* Moroccan pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `
+          repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(201,168,76,0.4) 30px, rgba(201,168,76,0.4) 31px),
+          repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(201,168,76,0.4) 30px, rgba(201,168,76,0.4) 31px),
+          repeating-linear-gradient(45deg, transparent, transparent 42px, rgba(201,168,76,0.2) 42px, rgba(201,168,76,0.2) 43px)
+        `,
       }} />
+
+      {/* Top gold border accent */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+      {/* Bottom gold border accent */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div

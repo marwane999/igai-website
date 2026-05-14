@@ -12,6 +12,9 @@ export function Footer() {
 
   return (
     <footer className="bg-bg-dark text-text-on-dark">
+      {/* Top gold accent line */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           <div className="space-y-5">

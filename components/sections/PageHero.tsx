@@ -27,8 +27,11 @@ export function PageHero({ title, subtitle, bgImage, breadcrumbs }: PageHeroProp
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/70" />
         </>
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary-light to-secondary" />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-[#1E4A6E] to-secondary" />
       )}
+
+      {/* Gold accent bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {breadcrumbs && (

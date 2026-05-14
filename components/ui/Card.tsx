@@ -14,13 +14,13 @@ export function Card({ className, image, title, description, children }: CardPro
   return (
     <div
       className={cn(
-        "rounded-xl bg-white shadow-sm border border-border/40 overflow-hidden transition-all duration-300 hover:shadow-md hover:border-primary/50",
+        "rounded-xl bg-white shadow-sm border border-border/40 overflow-hidden transition-all duration-300 hover:shadow-md hover:border-primary/50 group",
         className,
       )}
     >
       {image && (
         <div className="relative w-full h-48 overflow-hidden">
-          <Image src={image.src} alt={image.alt} fill className="object-cover" />
+          <Image src={image.src} alt={image.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
       )}
       <div className="p-6">

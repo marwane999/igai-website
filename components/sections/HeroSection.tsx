@@ -24,7 +24,18 @@ export function HeroSection() {
             "url('https://www.igai-fez.com/wp-content/uploads/2014/03/1-1-680x1024.jpg')",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/80" />
+
+      {/* Moroccan geometric overlay */}
+      <div className="absolute inset-0 opacity-[0.04]" style={{
+        backgroundImage: `
+          repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(201,168,76,0.3) 40px, rgba(201,168,76,0.3) 41px),
+          repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(201,168,76,0.3) 40px, rgba(201,168,76,0.3) 41px)
+        `,
+      }} />
+
+      {/* Decorative gold accent lines */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left">
         <motion.div
@@ -33,7 +44,7 @@ export function HeroSection() {
           className="max-w-3xl mx-auto lg:mx-0"
         >
           <motion.div variants={fadeUp} custom={0} className="mb-4">
-            <span className="inline-flex items-center gap-2 bg-primary/20 text-primary text-sm font-medium px-4 py-1.5 rounded-full border border-primary/30">
+            <span className="inline-flex items-center gap-2 bg-primary/15 text-primary-light text-sm font-medium px-4 py-1.5 rounded-full border border-primary/30 backdrop-blur-sm">
               <ShieldCheck className="h-4 w-4" />
               Fulbright-Hays Group Project Abroad Partner
             </span>
@@ -45,7 +56,7 @@ export function HeroSection() {
             className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight text-balance"
           >
             Master Arabic in Morocco&apos;s Cultural Heart —{" "}
-            <span className="text-primary">Fez</span>
+            <span className="text-primary-light">Fez</span>
           </motion.h1>
 
           <motion.p
@@ -58,7 +69,7 @@ export function HeroSection() {
           </motion.p>
 
           <motion.div variants={fadeUp} custom={3} className="mt-4">
-            <div className="inline-flex items-center gap-1.5 text-primary">
+            <div className="inline-flex items-center gap-1.5 text-primary-light">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-4 w-4 fill-current" />
               ))}
