@@ -23,7 +23,10 @@ Thumbs.db
 # Logs
 *.log
 
-# Other projects (root level)
+# Auto-generated
+next-env.d.ts
+
+# Local project artifacts
 backend/
 docs/
 docker-compose.yml
